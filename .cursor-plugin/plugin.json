@@ -1,0 +1,28 @@
+{
+  "name": "meeting-ai-grok-bot",
+  "displayName": "Meeting.ai",
+  "version": "0.1.0",
+  "description": "Find what was discussed, turn decisions into action, record meetings, and create Visual Notes with Meeting.ai.",
+  "author": {
+    "name": "Meeting.ai",
+    "email": "support@meeting.ai"
+  },
+  "homepage": "https://meeting.ai/mcp",
+  "repository": "https://github.com/meeting-ai/memo-grok-bot-plugin",
+  "license": "Apache-2.0",
+  "logo": "assets/logo.png",
+  "keywords": [
+    "meetings",
+    "meeting-notes",
+    "transcripts",
+    "notetaker",
+    "visual-notes",
+    "productivity",
+    "mcp"
+  ],
+  "category": "productivity",
+  "mcpServers": "./mcp.json",
+  "minClientVersions": {
+    "cursor": "never"
+  }
+}

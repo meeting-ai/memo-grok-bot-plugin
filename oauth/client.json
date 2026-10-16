@@ -1,0 +1,20 @@
+{
+  "client_id": "https://meeting-ai.github.io/memo-grok-bot-plugin/oauth/client.json",
+  "client_name": "Meeting.ai for Grok Bot",
+  "client_uri": "https://github.com/meeting-ai/memo-grok-bot-plugin",
+  "logo_uri": "https://raw.githubusercontent.com/meeting-ai/memo-grok-bot-plugin/main/assets/logo.png",
+  "policy_uri": "https://meeting.ai/privacy",
+  "tos_uri": "https://meeting.ai/terms",
+  "application_type": "native",
+  "redirect_uris": [
+    "http://localhost:8787/callback"
+  ],
+  "grant_types": [
+    "authorization_code",
+    "refresh_token"
+  ],
+  "response_types": [
+    "code"
+  ],
+  "token_endpoint_auth_method": "none"
+}
