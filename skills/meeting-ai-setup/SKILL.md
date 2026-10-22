@@ -11,7 +11,7 @@ sign-in and consent. The package contains no credentials.
 ## Connect
 
 1. When Meeting.ai is listed, open Connect apps, find Meeting.ai, and add it. Then choose Authenticate or Authorize and finish Meeting.ai sign-in and consent in the browser.
-2. Before publication, direct the user to https://meeting.ai/mcp for supported connection options.
+2. For supported connection options, use https://meeting.ai/mcp. The consent screen may name Cursor, Grok Bot's connector identity; this is expected.
 3. Call `workspace_list` and identify the active workspace. Installed does not mean authenticated.
 
 ## Workspace and access

@@ -14,7 +14,8 @@ what was decided, ask for it written up differently, ask for a picture of it.
 
 This package connects to the hosted Meeting.ai MCP server at `https://mcp.meeting.ai/mcp`.
 Ask Grok Bot to connect to that URL, then follow the Meeting.ai sign-in prompt and choose
-your workspace. See the [Meeting.ai connection guide](https://meeting.ai/mcp) for more help.
+your workspace. The consent screen may name Cursor, Grok Bot's connector identity; this is
+expected. See the [Meeting.ai connection guide](https://meeting.ai/mcp) for more help.
 
 ## Try it
 
@@ -45,6 +46,7 @@ no active subscription or coins, Grok Bot tells you and stops.
 | `.cursor-plugin/plugin.json` | Plugin manifest for Grok Bot |
 | `mcp.json` | Connection to the hosted Meeting.ai MCP server |
 | `skills/` | Guidance for recording, editing notes, Visual Notes, setup, and everyday meeting work |
+| `oauth/client.json` | Legacy metadata kept available for older installations |
 
 The MCP server itself is a hosted service operated by Meeting.ai. This repository contains no
 server code and no credentials.
