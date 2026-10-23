@@ -2,10 +2,7 @@
   "mcpServers": {
     "meeting-ai": {
       "type": "http",
-      "url": "https://mcp.meeting.ai/mcp",
-      "auth": {
-        "CLIENT_ID": "https://meeting-ai.github.io/memo-grok-bot-plugin/oauth/client.json"
-      }
+      "url": "https://mcp.meeting.ai/mcp"
     }
   }
 }

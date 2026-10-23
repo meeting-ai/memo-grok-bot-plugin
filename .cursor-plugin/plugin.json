@@ -1,7 +1,7 @@
 {
   "name": "meeting-ai-grok-bot",
   "displayName": "Meeting.ai",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Find what was discussed, turn decisions into action, record meetings, and create Visual Notes with Meeting.ai.",
   "author": {
     "name": "Meeting.ai",
