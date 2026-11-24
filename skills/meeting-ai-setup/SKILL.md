@@ -10,7 +10,7 @@ sign-in and consent. The package contains no credentials.
 
 ## Connect
 
-1. When Meeting.ai is listed, open Connect apps, find Meeting.ai, and add it. Then choose Authenticate or Authorize and finish Meeting.ai sign-in and consent in the browser.
+1. When Meeting.ai is listed, open Connect apps, find Meeting.ai, and add it. Then choose Authenticate or Authorize and finish Meeting.ai sign-in and consent in the browser. Never ask for a password, API key, or token in chat.
 2. For supported connection options, use https://meeting.ai/mcp. The consent screen may name Cursor, Grok Bot's connector identity; this is expected.
 3. Call `workspace_list` and identify the active workspace. Installed does not mean authenticated.
 
@@ -18,6 +18,8 @@ sign-in and consent. The package contains no credentials.
 
 Use `workspace_list` to show available workspaces. Use `workspace_set_active` only when the
 user wants to change this connection's default. Use `workspace_id` for a one-off call.
+`media_image_gen`, `media_audio_gen`, and `recipe_visual_note` do not accept it: they always
+save to the active workspace.
 
 If authentication fails, stop and use the client's reconnect control. If the client fails
 before sign-in starts, report the connection error; changing a user's password or buying
@@ -28,7 +30,7 @@ An empty meeting list can mean the wrong workspace or an account with no meeting
 balance, subscription, or storage error is separate from authentication; explain the tool's
 message and stop. Do not keep retrying paid operations.
 
-The user can revoke the grant from Connected Apps in the Meeting.ai web app. Removing the
+The user can revoke the grant in the Meeting.ai web app under Settings › MCP & CLI. Removing the
 plugin locally is not proof that the server-side grant was revoked.
 
 Setup guide: https://meeting.ai/mcp

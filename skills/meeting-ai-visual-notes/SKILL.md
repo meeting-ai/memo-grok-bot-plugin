@@ -5,6 +5,10 @@ description: Use when the user wants a Visual Note, an infographic-style one-pag
 
 # Visual Notes
 
+> **Requires the Meeting.ai MCP server.** This skill calls its tools. If `workspace_list` is not
+> available in this session, stop and follow the `meeting-ai-setup` skill. Do not guess or invent
+> results. The client can show the tool names with a prefix.
+
 A Visual Note is a one-page, house-styled image that summarizes content visually. Meeting.ai
 draws one for every finished meeting. Through Grok Bot the user can also create one from any
 meeting, any set of meetings, or any topic at all.
@@ -20,6 +24,12 @@ meeting, any set of meetings, or any topic at all.
    stories.
 4. The image is saved to the user's Drive and returned inline with a login-required link.
    Show the returned image when the client can render it, and tell the user it is in their Drive. If inline rendering is unavailable, provide the returned login-required link without making it public.
+
+   A long drawing can return the tool error `JOB_PENDING` with `data.job_id`. The drawing
+   continues and can be charged. Do not call `recipe_visual_note` again. Call `media_job_status`
+   with the `job_id` to get the Drive link (and the image, when it is returned; a missing image
+   is not a problem), or tell the user that Meeting.ai saves it to Drive when it is ready. If
+   `media_job_status` returns `JOB_PENDING` again, wait before you call it again.
 
 ## From several meetings
 
@@ -43,6 +53,13 @@ contrast, creates a new standalone image in Drive and does not touch the meeting
 
 ## Cost and repeats
 
+`recipe_visual_note` always saves to the active workspace. It does not accept
+`workspace_id`. Check the active workspace with `workspace_list` first. If the content comes
+from a different workspace, ask the user before you change the active workspace.
+
 Every call spends the user's coins and creates a new image. Confirm before generating, and
-do not regenerate to "try again" unless the user asks. If the account has no coins or no
+do not regenerate to "try again" unless the user asks. `JOB_PENDING` is not a reason to call again.
+`media_job_status` costs nothing and does not create a new image. If a call returns
+`DELIVERY_FAILED`, the image was drawn and charged, but it was not saved to Drive. Tell the
+user the reason from the message and stop. If the account has no coins or no
 active subscription, the tool returns a clear error. Relay the message and stop.

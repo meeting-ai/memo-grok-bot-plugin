@@ -5,6 +5,10 @@ description: Use when the user wants Meeting.ai to record, join, or take notes f
 
 # Create notes from an online meeting
 
+> **Requires the Meeting.ai MCP server.** This skill calls its tools. If `workspace_list` is not
+> available in this session, stop and follow the `meeting-ai-setup` skill. Do not guess or invent
+> results. The client can show the tool names with a prefix.
+
 Meeting.ai records the meeting and writes the notes for you. There are two ways to get a
 meeting in through Grok Bot, and a few more through the Meeting.ai apps. Explain the options
 in plain words, then do the one the user picks.
@@ -50,7 +54,8 @@ Check when the user asks, or suggest they come back after the meeting ends.
 
 `meetings_stop` makes the notetaker leave a live call and finalises the meeting from what was
 captured so far. Only the meeting owner can do this, and it only works while the notetaker
-is in the call. Recordings from uploaded files are not stopped this way.
+is in the call. Meetings from an uploaded file or recorded in the Meeting.ai mobile or web app
+are not stopped this way.
 
 ## Other ways to record, outside Grok Bot
 
